@@ -1,8 +1,11 @@
-import { loadMap } from './fonctions';
+
+import { addInterraction, loadMap } from './fonctions';
 
 
-loadMap('map', 5)
 
+
+
+addInterraction('Circle', loadMap('map',0))
 
 
 
