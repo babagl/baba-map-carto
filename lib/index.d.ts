@@ -1,2 +1,1 @@
-import { faker } from './faker';
-export { faker };
+export {};
