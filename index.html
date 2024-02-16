@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Carte Interactive</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <nav>
-        <select name="type" id="type">
-          <option value="Circle">Circle</option>
-          <option value="Square">Square</option>
-        </select>
-      </nav>
+      <select name="type" id="type">
+        <option value="Circle">Circle</option>
+        <option value="Square">Square</option>
+      </select>
+    </nav>
     <div id="map" class="map">
-        <div class="widgets-container">
-            <!-- Boutons de zoom -->
-            <button class="zoom-btn" id="zoom-in"><i class="fas fa-plus"></i></button>
-            <button class="zoom-btn" id="zoom-out"><i class="fas fa-minus"></i></button>
-            <!-- Bouton pour basculer le panneau latéral -->
-            <button class="toggle-sidebar" id="toggle-sidebar"><i class="fas fa-bars"></i></button>
-        </div>
+      <div class="widgets-container">
+        <!-- Boutons de zoom -->
+        <button class="zoom-btn" id="zoom-in"><i class="fas fa-plus"></i></button>
+        <button class="zoom-btn" id="zoom-out"><i class="fas fa-minus"></i></button>
+        <!-- Bouton pour basculer le panneau latéral -->
+        <button class="toggle-sidebar" id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+      </div>
 
-        <!-- Panneau latéral pour des informations ou des filtres -->
-        <aside class="sidebar" id="sidebar">
-            <h2>Couches <i class="fas fa-filter"></i></h2>
-            <div class="search-container"><i class="fas fa-search search-widget"></i><input type="text" class="" id=""></div>
-            <ul class="layer-list">
-                <li><i class="fas fa-temperature-low"></i> Couches </li>
-                <li><i class="fas fa-wind"></i> Vitesse du Vent</li>
-                <li><i class="fas fa-cloud-rain"></i> Précipitations</li>
-                <li><i class="fas fa-sun"></i> Ensoleillement</li>
-                <li><i class="fas fa-smog"></i> Pollution</li>
-                <li><i class="fas fa-tree"></i> Utilisation du Sol</li>
-                <li><i class="fas fa-water"></i> Plans d'Eau</li>
-                <li><i class="fas fa-users"></i> Population</li>
-                <li><i class="fas fa-traffic-light"></i> Trafic</li>
-            </ul>
-        </aside>
+      <!-- Panneau latéral pour des informations ou des filtres -->
+      <aside class="sidebar" id="sidebar">
+        <h2>Filtres <i class="fas fa-filter"></i></h2>
+        <ul>
+          <li>
+            <button id="filter-temp"><i class="fas fa-temperature-low"></i> Température</button>
+          </li>
+          <li>
+            <button id="filter-wind"><i class="fas fa-wind"></i> Vitesse du Vent</button>
+          </li>
+          <li>
+            <button id="filter-precip"><i class="fas fa-cloud-rain"></i> Précipitations</button>
+          </li>
+          <li>
+            <button id="filter-sun"><i class="fas fa-sun"></i> Ensoleillement</button>
+          </li>
+          <li>
+            <button id="filter-pollution"><i class="fas fa-smog"></i> Pollution</button>
+          </li>
+          <li>
+            <button id="filter-landuse"><i class="fas fa-tree"></i> Utilisation du Sol</button>
+          </li>
+          <li>
+            <button id="filter-water"><i class="fas fa-water"></i> Plans d'Eau</button>
+          </li>
+          <li>
+            <button id="filter-population"><i class="fas fa-users"></i> Population</button>
+          </li>
+          <li>
+            <button id="filter-traffic"><i class="fas fa-traffic-light"></i> Trafic</button>
+          </li>
+        </ul>
+      </aside>
     </div>
 
     <script src="dist/bundle.js"></script>
-</body>
+    <script>
+      import { addInterraction } from "./dist/bundle.js";
+      const type = document.getElementById("type").value;
+      addInterraction(type);
+    </script>
+  </body>
 </html>
