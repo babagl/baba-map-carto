@@ -135,3 +135,16 @@ body{
 .layer-list li:hover .layer-icon {
   fill: #333;
 }
+
+.interaction-container{
+  display: flex;
+  flex-direction: column-reverse;
+  select{
+    padding: 5%;
+    border-radius: 2rem;
+    border: #666 0.1px ;
+    &:focus{
+      border: #666 0.1px;
+    }
+  }
+}
