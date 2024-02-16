@@ -126,4 +126,17 @@ body {
 
 .layer-list li:hover .layer-icon {
   fill: #333;
+}
+
+.interaction-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.interaction-container select {
+  padding: 5%;
+  border-radius: 2rem;
+  border: #666 0.1px;
+}
+.interaction-container select:focus {
+  border: #666 0.1px;
 }/*# sourceMappingURL=style.css.map */

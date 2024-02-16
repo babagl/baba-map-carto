@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <select name="type" id="type">
-          <option value="Circle">Circle</option>
-          <option value="Square">Square</option>
-        </select>
-      </nav>
+    
     <div id="map" class="map">
         <div class="widgets-container">
             <!-- Boutons de zoom -->
@@ -28,6 +23,14 @@
             <h2>Couches <i class="fas fa-filter"></i></h2>
             <div class="search-container"><i class="fas fa-search search-widget"></i><input type="text" class="" id=""></div>
             <ul class="layer-list">
+                <div class="interaction-container">
+                    <select name="interaction" id="interaction">
+                    <option value="None" selected>None</option>
+                    <option value="Circle" selected>Circle</option>
+                    <option value="Square">Square</option>
+                  </select>
+                  <label for="interaction">Ajouter une interaction</label>
+                </div>
                 <li><i class="fas fa-temperature-low"></i> Couches </li>
                 <li><i class="fas fa-wind"></i> Vitesse du Vent</li>
                 <li><i class="fas fa-cloud-rain"></i> Précipitations</li>

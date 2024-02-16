@@ -1,5 +1,7 @@
 import Map from 'ol/Map.js';
 import { Coordinate } from 'ol/coordinate';
+import Draw from "ol/interaction/Draw";
+import { Snap } from "ol/interaction.js";
 import Layer from 'ol/layer/Layer';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
@@ -12,5 +14,6 @@ interface GeoJSONVectorLayerOptions {
 }
 export declare const createGeoJSONVectorLayer: (url: string, options: GeoJSONVectorLayerOptions) => VectorLayer<VectorSource>;
 export declare const rotateMap: (mapTarget: string, n: number, center: Coordinate | undefined) => void;
-export declare const addInterraction: (type: any, map: Map) => void;
+export declare const addInteractions: (map: Map, selectedValue: any, source: VectorSource) => void;
+export declare const removeInteractions: (map: Map, draw?: Draw, snap?: Snap) => void;
 export {};
